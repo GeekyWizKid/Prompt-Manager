@@ -1,0 +1,243 @@
+/* Global Notion-style variables */
+:root {
+    --notion-black: rgb(55, 53, 47);
+    --notion-gray: rgb(120, 119, 116);
+    --notion-light-gray: rgb(235, 235, 235);
+    --notion-hover-bg: rgba(55, 53, 47, 0.08);
+    --notion-border: rgba(55, 53, 47, 0.16);
+    --notion-white: #ffffff;
+  }
+  
+  /* Base styles */
+  body {
+    width: 400px;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, 'Apple Color Emoji', Arial, sans-serif;
+    background: #fff;
+    min-height: 300px;
+    position: relative;
+  }
+  
+  .container {
+    height: 100%;
+    padding: 20px;
+  }
+  
+  /* Prompt List */
+  .prompts-list {
+    padding: 16px 0;
+  }
+  
+  .prompt-item {
+    background: #fff;
+    border: 1px solid var(--notion-border);
+    border-radius: 4px;
+    padding: 12px;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: background 120ms ease-in 0s;
+  }
+  
+  .prompt-item:hover {
+    background: var(--notion-hover-bg);
+  }
+  
+  .prompt-item h3 {
+    margin: 0 0 4px 0;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--notion-black);
+  }
+  
+  .prompt-item p {
+    margin: 0;
+    font-size: 12px;
+    color: var(--notion-gray);
+  }
+  
+  /* Add Button */
+  .add-button {
+    width: 100%;
+    padding: 8px 12px;
+    background: transparent;
+    border: 1px dashed var(--notion-border);
+    border-radius: 4px;
+    color: var(--notion-gray);
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 120ms ease-in 0s;
+    margin: 16px 0;
+  }
+  
+  .add-button:hover {
+    background: var(--notion-hover-bg);
+    border-style: solid;
+  }
+  
+  /* Modal */
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+    z-index: 1000;
+    display: none;
+  }
+  
+  .modal-content {
+    width: 100%;
+    height: 100%;
+    padding: 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Form */
+  #promptForm {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 40px);
+  }
+  
+  .form-group {
+    margin-bottom: 16px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: var(--notion-black);
+    font-weight: 500;
+  }
+  
+  input[type="text"],
+  textarea {
+    width: 100%;
+    padding: 8px 12px;
+    box-sizing: border-box;
+    border: 1px solid var(--notion-border);
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: var(--notion-black);
+    background: transparent;
+    transition: background 120ms ease-in 0s;
+    font-family: inherit;
+  }
+  
+  input[type="text"]:focus,
+  textarea:focus {
+    outline: none;
+    background: rgba(35, 131, 226, 0.07);
+    border-color: rgba(35, 131, 226, 0.7);
+  }
+  
+  input[type="text"] {
+    height: 36px;
+  }
+  
+  textarea {
+    flex: 1;
+    min-height: 120px;
+    resize: none;
+  }
+  
+  /* Button Group */
+  .button-group {
+    display: flex;
+    gap: 8px;
+    padding: 16px 0;
+    margin-top: auto;
+    background: #fff;
+    border-top: 1px solid var(--notion-border);
+  }
+  
+  .button {
+    flex: 1;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 120ms ease-in 0s;
+    text-align: center;
+  }
+  
+  .button.secondary {
+    background: transparent;
+    border: 1px solid var(--notion-border);
+    color: var(--notion-black);
+  }
+  
+  .button.secondary:hover {
+    background: var(--notion-hover-bg);
+  }
+  
+  .button.primary {
+    background: var(--notion-black);
+    border: 1px solid var(--notion-black);
+    color: white;
+  }
+  
+  .button.primary:hover {
+    background: rgba(55, 53, 47, 0.85);
+  }
+  
+  /* Modal Header */
+  .modal h2 {
+    margin: 0 0 24px 0;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--notion-black);
+  }
+  
+  /* Prompt Actions */
+  .prompt-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px;
+  }
+  
+  .action-button {
+    padding: 4px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    color: var(--notion-gray);
+    border-radius: 3px;
+    transition: all 120ms ease-in 0s;
+  }
+  
+  .action-button:hover {
+    background: var(--notion-hover-bg);
+    color: var(--notion-black);
+  }
+  
+  /* Error states */
+  input.error,
+  textarea.error {
+    border-color: #eb5757;
+    background: rgba(235, 87, 87, 0.1);
+  }
+  
+  /* Empty state */
+  .no-prompts {
+    text-align: center;
+    color: var(--notion-gray);
+    font-size: 14px;
+    padding: 20px;
+  }
+  
+  /* Page header */
+  h1 {
+    font-size: 24px;
+    font-weight: 600;
+    color: var(--notion-black);
+    margin: 0 0 20px 0;
+    line-height: 1.2;
+  }

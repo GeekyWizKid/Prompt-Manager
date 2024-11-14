@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>LangGPT Template Editor</title>
+    <link rel="stylesheet" href="css/notion-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>LangGPT Template Editor</h1>
+            <div class="header-buttons">
+                <button id="newTemplate">New Template</button>
+                <button id="importTemplate">Import</button>
+                <button id="exportTemplate">Export</button>
+            </div>
+        </header>
+
+        <div class="template-workspace">
+            <div class="template-list">
+                <div class="search-box">
+                    <input type="text" id="templateSearch" placeholder="Search templates...">
+                </div>
+                <div id="templatesList" class="templates-container">
+                    <!-- Templates will be listed here -->
+                </div>
+            </div>
+
+            <div class="template-editor">
+                <div class="editor-header">
+                    <input type="text" id="templateName" placeholder="Template Name">
+                    <input type="text" id="templateCategory" placeholder="Category">
+                </div>
+
+                <div class="editor-sections">
+                    <div class="section">
+                        <label>Role Definition</label>
+                        <textarea id="roleDefinition" placeholder="Define the AI's role and expertise..."></textarea>
+                    </div>
+
+                    <div class="section">
+                        <label>Context</label>
+                        <textarea id="context" placeholder="Provide relevant background information..."></textarea>
+                    </div>
+
+                    <div class="section">
+                        <label>Skills Required</label>
+                        <div id="skillsList" class="skills-list">
+                            <div class="skill-item">
+                                <input type="text" placeholder="Add skill...">
+                                <button class="add-skill">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="section">
+                        <label>Output Format</label>
+                        <textarea id="outputFormat" placeholder="Specify the desired output format..."></textarea>
+                    </div>
+
+                    <div class="section">
+                        <label>Examples (optional)</label>
+                        <textarea id="examples" placeholder="Provide examples of input/output..."></textarea>
+                    </div>
+                </div>
+
+                <div class="editor-footer">
+                    <button id="previewTemplate">Preview</button>
+                    <button id="saveTemplate">Save Template</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Preview Modal -->
+        <div id="previewModal" class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>Template Preview</h2>
+                    <button class="close-modal">&times;</button>
+                </div>
+                <div class="preview-content">
+                    <pre id="previewContent"></pre>
+                </div>
+                <div class="modal-footer">
+                    <button id="copyPreview">Copy to Clipboard</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="js/template.js"></script>
+</body>
+
+</html>

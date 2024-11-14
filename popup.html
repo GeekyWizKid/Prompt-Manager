@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Prompt Manager</title>
+    <link rel="stylesheet" href="css/notion-style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Prompt<br>Manager</h1>
+
+        <button id="addNew" class="add-button">+ New Prompt</button>
+
+        <div class="prompts-list" id="promptsList">
+            <!-- Prompts will be dynamically inserted here -->
+        </div>
+
+        <div id="promptModal" class="modal">
+            <div class="modal-content">
+                <h2>Add/Edit Prompt</h2>
+                <form id="promptForm">
+                    <div class="form-group">
+                        <label>Title</label>
+                        <input type="text" id="promptTitle" placeholder="Enter prompt title" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Category</label>
+                        <input type="text" id="promptCategory" placeholder="Enter category">
+                    </div>
+
+                    <div class="form-group content-group">
+                        <label>Content</label>
+                        <textarea id="promptContent" placeholder="Enter your prompt content" required></textarea>
+                    </div>
+
+                    <div class="button-group">
+                        <button type="button" id="cancelPrompt" class="button secondary">Cancel</button>
+                        <button type="submit" id="savePrompt" class="button primary">Save</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/popup.js"></script>
+</body>
+
+</html>
